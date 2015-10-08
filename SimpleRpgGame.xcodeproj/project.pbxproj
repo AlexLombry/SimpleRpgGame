@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA90B0581BC7229F00B31D88 /* axe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA90B0571BC7229F00B31D88 /* axe.mp3 */; settings = {ASSET_TAGS = (); }; };
 		FA9C6F691BC55C2400E4A43F /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6F681BC55C2400E4A43F /* Orc.swift */; settings = {ASSET_TAGS = (); }; };
 		FA9C6F6B1BC55D1C00E4A43F /* Poring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6F6A1BC55D1C00E4A43F /* Poring.swift */; settings = {ASSET_TAGS = (); }; };
 		FAD78BD31BC553E2007AC59F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BD21BC553E2007AC59F /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA90B0571BC7229F00B31D88 /* axe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = axe.mp3; sourceTree = "<group>"; };
 		FA9C6F681BC55C2400E4A43F /* Orc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orc.swift; sourceTree = "<group>"; };
 		FA9C6F6A1BC55D1C00E4A43F /* Poring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poring.swift; sourceTree = "<group>"; };
 		FAD78BCF1BC553E2007AC59F /* SimpleRpgGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRpgGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 		FAD78BD11BC553E2007AC59F /* SimpleRpgGame */ = {
 			isa = PBXGroup;
 			children = (
+				FA90B0571BC7229F00B31D88 /* axe.mp3 */,
 				FAB4CD371BC6A502000B5D1C /* Model */,
 				FAD78BD21BC553E2007AC59F /* AppDelegate.swift */,
 				FAD78BD41BC553E2007AC59F /* ViewController.swift */,
@@ -147,6 +150,7 @@
 				FAD78BDD1BC553E2007AC59F /* LaunchScreen.storyboard in Resources */,
 				FAD78BDA1BC553E2007AC59F /* Assets.xcassets in Resources */,
 				FAD78BD81BC553E2007AC59F /* Main.storyboard in Resources */,
+				FA90B0581BC7229F00B31D88 /* axe.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

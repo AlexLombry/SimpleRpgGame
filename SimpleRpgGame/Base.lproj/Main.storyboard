@@ -98,13 +98,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhN-u9-I1u">
-                                <rect key="frame" x="471" y="473" width="101" height="114"/>
+                                <rect key="frame" x="259" y="486" width="83" height="94"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="Ody-cG-rfV"/>
+                                    <constraint firstAttribute="width" constant="101" id="QfQ-Sa-kDM"/>
+                                    <constraint firstAttribute="width" constant="83" id="TeV-Ed-aE7"/>
                                     <constraint firstAttribute="height" constant="114" id="cEV-YZ-TLT"/>
+                                    <constraint firstAttribute="height" constant="94" id="iwL-8r-88P"/>
+                                    <constraint firstAttribute="height" constant="114" id="udF-P8-edX"/>
                                 </constraints>
                                 <state key="normal" image="attack"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ody-cG-rfV"/>
+                                        <exclude reference="QfQ-Sa-kDM"/>
+                                        <exclude reference="cEV-YZ-TLT"/>
+                                        <exclude reference="udF-P8-edX"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="attackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq8-kb-syI"/>
                                 </connections>
@@ -120,11 +132,15 @@
                             <constraint firstAttribute="trailing" secondItem="618-3k-zIt" secondAttribute="trailing" constant="92" id="88X-qY-bNy"/>
                             <constraint firstItem="Mxx-DW-oTz" firstAttribute="top" secondItem="y42-uw-asP" secondAttribute="bottom" constant="71" id="8jE-5n-880"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Y3-eW-sYK" secondAttribute="bottom" id="Cc0-RO-3Wd"/>
+                            <constraint firstItem="IhN-u9-I1u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GRR-Zr-tWB"/>
                             <constraint firstAttribute="trailing" secondItem="2Y3-eW-sYK" secondAttribute="trailing" id="P8w-Z4-6RT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IhN-u9-I1u" secondAttribute="bottom" constant="8" id="PtN-aY-sz2"/>
                             <constraint firstItem="axU-67-vIC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="22" id="Tbd-7d-KVZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Mxx-DW-oTz" secondAttribute="bottom" constant="-68" id="XCl-Os-ggv"/>
                             <constraint firstItem="618-3k-zIt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="27" id="XWS-da-p2D"/>
+                            <constraint firstItem="IhN-u9-I1u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yur-iK-coL"/>
                             <constraint firstAttribute="trailing" secondItem="atU-6y-mjp" secondAttribute="trailing" constant="63" id="aGT-kl-7v1"/>
+                            <constraint firstItem="IhN-u9-I1u" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aiD-Y6-jty"/>
                             <constraint firstItem="B9O-rW-BJi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="200" id="e5I-De-dWu"/>
                             <constraint firstItem="atU-6y-mjp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="63" id="eha-QW-MW1"/>
                             <constraint firstItem="618-3k-zIt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="93" id="fPt-Ia-Z7k"/>
@@ -135,9 +151,19 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IhN-u9-I1u" secondAttribute="bottom" constant="13" id="rpw-dN-d6Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y42-uw-asP" secondAttribute="trailing" constant="180" id="wTo-el-o1e"/>
                             <constraint firstItem="Mxx-DW-oTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wga-xb-yGP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IhN-u9-I1u" secondAttribute="bottom" constant="20" id="y2Z-P4-HZj"/>
                             <constraint firstItem="atU-6y-mjp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yoe-lf-ocA"/>
                             <constraint firstAttribute="trailing" secondItem="SQ0-ng-8iO" secondAttribute="trailing" constant="4" id="zvL-tu-hJy"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0bf-iK-8UW"/>
+                                <exclude reference="Yur-iK-coL"/>
+                                <exclude reference="aiD-Y6-jty"/>
+                                <exclude reference="PtN-aY-sz2"/>
+                                <exclude reference="rpw-dN-d6Q"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="attackBtn" destination="IhN-u9-I1u" id="hy2-Zc-JcZ"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -33,8 +34,17 @@ class ViewController: UIViewController {
         generateEnemy()
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func generateEnemy() {
+        // Show the attack button
         attackBtn.hidden = false
+        
+        // make a random number between 0 and 1 to know 
+        // which enemy we're going to make and add it custom image (Poring is default image)
         let rand = Int(arc4random_uniform(2))
         var pngForEnemy: String = "poring"
         
@@ -45,6 +55,8 @@ class ViewController: UIViewController {
             pngForEnemy = "orc"
         }
         
+        // Just before launching enemy, 
+        // make some property for image and label
         beforeEnemyLaunch(pngForEnemy)
 
     }
@@ -57,46 +69,50 @@ class ViewController: UIViewController {
         printLbl.text = "Fighting \(enemy.type)"
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func chestPressed(sender: AnyObject) {
         let nbSeconds: Double = 3.0
+        
         chestBtn.hidden = true
         printLbl.text = chestMessage
-        printLbl.text = "New enemy may appears in \(Int(nbSeconds)) seconds"
-        
+
         /// Wait 3 seconds before re generate a new enemy
         NSTimer.scheduledTimerWithTimeInterval(nbSeconds, target: self, selector: "generateEnemy", userInfo: nil, repeats: false)
     }
     
     @IBAction func attackPressed(sender: AnyObject) {
         
+        // If the attack succeed we show the amount of attack and decrease enemy HP
         if enemy.attemptAttack(player.attack) {
             printLbl.text = "Attacked \(enemy.type) for \(player.attack) HP"
             enemyHpLbl.text = "\(enemy.hp) HP"
         } else {
             printLbl.text = "You missed the Enemy"
         }
+
+        /* So, the enemy is dead */
         
-        // If enemy drop a loot
-        if let loot = enemy.dropLoot() {
-            player.addItemToStorage(loot)
-            chestMessage = "\(player.name) has found \(loot)"
-            chestBtn.hidden = false
-        }
-        
-        // If enemy is dead
+        // We delete the HP Label of the enemy
+        // We set the main Label to congratulate the Player
+        // We hide the Enemy (is dead) and we hide the attack button (no one to attack now)
         if !enemy.isAlive {
             enemyHpLbl.text = ""
             printLbl.text = "Killed enemy \(enemy.type)"
             enemyImg.hidden = true
-            
-            // The enemy is dead so we don't need anymore the attack button
             attackBtn.hidden = true
         }
+        
+        // If enemy drop a loot
+        if let loot = enemy.dropLoot() {
+            if !player.storage.contains(loot) {
+                chestMessage = "\(player.name) has found \(loot)"
+            } else {
+                chestMessage = "\(player.name) has found another \(loot)"
+            }
+            
+            player.addItemToStorage(loot)
+            chestBtn.hidden = false
+        }
+
     }
     
 
