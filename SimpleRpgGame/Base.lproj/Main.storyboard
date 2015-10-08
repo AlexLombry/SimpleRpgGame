@@ -21,6 +21,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
+                            <button hidden="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-Jh-mG6">
+                                <rect key="frame" x="388" y="382" width="136" height="153"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="5Ug-oe-oUl"/>
+                                    <constraint firstAttribute="width" constant="136" id="KmB-99-Qvd"/>
+                                </constraints>
+                                <state key="normal" image="chest"/>
+                                <connections>
+                                    <action selector="chestPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpG-BB-YKY"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ground" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-DW-oTz">
                                 <rect key="frame" x="0.0" y="534" width="572" height="134"/>
                                 <animations/>
@@ -36,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="149" id="h3F-66-gvi"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enem1" translatesAutoresizingMaskIntoConstraints="NO" id="SQ0-ng-8iO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orc" translatesAutoresizingMaskIntoConstraints="NO" id="SQ0-ng-8iO">
                                 <rect key="frame" x="316" y="386" width="280" height="149"/>
                                 <animations/>
                                 <constraints>
@@ -85,12 +97,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zz-Jh-mG6">
-                                <rect key="frame" x="388" y="382" width="136" height="153"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhN-u9-I1u">
+                                <rect key="frame" x="471" y="473" width="101" height="114"/>
                                 <animations/>
-                                <state key="normal" image="chest"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="Ody-cG-rfV"/>
+                                    <constraint firstAttribute="height" constant="114" id="cEV-YZ-TLT"/>
+                                </constraints>
+                                <state key="normal" image="attack"/>
                                 <connections>
-                                    <action selector="chestPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jpG-BB-YKY"/>
+                                    <action selector="attackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pq8-kb-syI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,6 +114,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="axU-67-vIC" secondAttribute="bottom" constant="65" id="0KC-Y1-ZYS"/>
+                            <constraint firstAttribute="trailing" secondItem="IhN-u9-I1u" secondAttribute="trailing" constant="28" id="0bf-iK-8UW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SQ0-ng-8iO" secondAttribute="bottom" constant="65" id="4gc-Tn-mBH"/>
                             <constraint firstItem="2Y3-eW-sYK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6Wg-SJ-Dm1"/>
                             <constraint firstAttribute="trailing" secondItem="618-3k-zIt" secondAttribute="trailing" constant="92" id="88X-qY-bNy"/>
@@ -111,8 +128,11 @@
                             <constraint firstItem="B9O-rW-BJi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="200" id="e5I-De-dWu"/>
                             <constraint firstItem="atU-6y-mjp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="63" id="eha-QW-MW1"/>
                             <constraint firstItem="618-3k-zIt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="93" id="fPt-Ia-Z7k"/>
+                            <constraint firstAttribute="trailing" secondItem="0Zz-Jh-mG6" secondAttribute="trailing" constant="76" id="hYm-uD-lo2"/>
                             <constraint firstItem="Mxx-DW-oTz" firstAttribute="top" secondItem="B9O-rW-BJi" secondAttribute="bottom" constant="71" id="hsU-B6-B6Q"/>
                             <constraint firstItem="2Y3-eW-sYK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mfH-ag-PGz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Zz-Jh-mG6" secondAttribute="bottom" constant="65" id="qsn-SU-VT0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IhN-u9-I1u" secondAttribute="bottom" constant="13" id="rpw-dN-d6Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y42-uw-asP" secondAttribute="trailing" constant="180" id="wTo-el-o1e"/>
                             <constraint firstItem="Mxx-DW-oTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wga-xb-yGP"/>
                             <constraint firstItem="atU-6y-mjp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yoe-lf-ocA"/>
@@ -120,6 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attackBtn" destination="IhN-u9-I1u" id="hy2-Zc-JcZ"/>
                         <outlet property="chestBtn" destination="0Zz-Jh-mG6" id="spt-Bg-Yvq"/>
                         <outlet property="enemyHpLbl" destination="y42-uw-asP" id="MXW-pf-akh"/>
                         <outlet property="enemyImg" destination="SQ0-ng-8iO" id="i2U-h4-6On"/>
@@ -133,10 +154,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="attack" width="198" height="223"/>
         <image name="bg" width="768" height="1024"/>
         <image name="chest" width="393" height="440"/>
-        <image name="enem1" width="574" height="487"/>
         <image name="ground" width="768" height="164"/>
+        <image name="orc" width="574" height="487"/>
         <image name="player" width="356" height="475"/>
         <image name="print" width="550" height="83"/>
     </resources>

@@ -18,6 +18,10 @@ class Enemy: Character {
         return "Grunt"
     }
     
+    convenience init(hp: Int, attack: Int, defense: Int) {
+        self.init(startingHp: hp, attackPower: attack, defensePoint: defense)
+    }
+    
     func dropLoot() -> String? {
         if !isAlive {
             let rand = Int(arc4random_uniform(UInt32(loot.count)))
