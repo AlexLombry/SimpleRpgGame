@@ -45,6 +45,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAB4CD371BC6A502000B5D1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAD78BE41BC55403007AC59F /* Character.swift */,
+				FAD78BE61BC55411007AC59F /* Enemy.swift */,
+				FAD78BE81BC55420007AC59F /* Player.swift */,
+				FA9C6F681BC55C2400E4A43F /* Orc.swift */,
+				FA9C6F6A1BC55D1C00E4A43F /* Poring.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		FAD78BC61BC553E2007AC59F = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +76,13 @@
 		FAD78BD11BC553E2007AC59F /* SimpleRpgGame */ = {
 			isa = PBXGroup;
 			children = (
+				FAB4CD371BC6A502000B5D1C /* Model */,
 				FAD78BD21BC553E2007AC59F /* AppDelegate.swift */,
 				FAD78BD41BC553E2007AC59F /* ViewController.swift */,
 				FAD78BD61BC553E2007AC59F /* Main.storyboard */,
 				FAD78BD91BC553E2007AC59F /* Assets.xcassets */,
 				FAD78BDB1BC553E2007AC59F /* LaunchScreen.storyboard */,
 				FAD78BDE1BC553E2007AC59F /* Info.plist */,
-				FAD78BE41BC55403007AC59F /* Character.swift */,
-				FAD78BE61BC55411007AC59F /* Enemy.swift */,
-				FAD78BE81BC55420007AC59F /* Player.swift */,
-				FA9C6F681BC55C2400E4A43F /* Orc.swift */,
-				FA9C6F6A1BC55D1C00E4A43F /* Poring.swift */,
 			);
 			path = SimpleRpgGame;
 			sourceTree = "<group>";
