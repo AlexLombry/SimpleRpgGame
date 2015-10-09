@@ -16,19 +16,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyHpLbl: UILabel!
     
     @IBOutlet weak var enemyImg: UIImageView!
-
+    @IBOutlet weak var playerImg: UIImageView!
+    
     @IBOutlet weak var chestBtn: UIButton!
     @IBOutlet weak var attackBtn: UIButton!
     
     var player: Player!
     var enemy: Enemy!
     var chestMessage: String?
-
+    var randomAttackPower: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        randomAttackPower = generateRandomAttackPower(min: 10, max: 30)
+        
         // set the player object, generate the enemy and set player lbl hp
-        player = Player.init(name: "Sammy", hp: 200, attack: 20, defense: 10)
+        player = Player.init(name: "Sammy", hp: 200, attack: randomAttackPower, defense: 10)
         playerHpLbl.text = "\(player.hp) HP"
 
         generateEnemy()
@@ -37,6 +41,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func generateRandomAttackPower(min min: Int, max: Int) -> Int {
+        if max < min {
+            return min
+        } else {
+            return Int(arc4random_uniform(UInt32((max - min) + 1))) + min
+        }
     }
     
     func generateEnemy() {
@@ -49,9 +61,11 @@ class ViewController: UIViewController {
         var pngForEnemy: String = "poring"
         
         if rand == 0 {
-            enemy = Poring(hp: 130, attack: 10, defense: 6)
+            randomAttackPower = generateRandomAttackPower(min: 4, max: 18)
+            enemy = Poring(hp: 130, attack: randomAttackPower, defense: 6)
         } else {
-            enemy = Orc(hp: 167, attack: 21, defense: 16)
+            randomAttackPower = generateRandomAttackPower(min: 14, max: 26)
+            enemy = Orc(hp: 167, attack: randomAttackPower, defense: 16)
             pngForEnemy = "orc"
         }
         
@@ -69,6 +83,26 @@ class ViewController: UIViewController {
         printLbl.text = "Fighting \(enemy.type)"
     }
     
+    func playerAttack() {
+        // If the attack succeed we show the amount of attack and decrease enemy HP
+        if enemy.attemptAttack(player.attack) {
+            printLbl.text = "Attacked \(enemy.type) for \(player.attack) HP"
+            enemyHpLbl.text = "\(enemy.hp) HP"
+        } else {
+            printLbl.text = "You missed the Enemy"
+        }
+    }
+    
+    func enemyAttack() {
+        printLbl.text = "Enemy attack you, protect yourself"
+        if player.attemptAttack(enemy.attack) {
+            printLbl.text = "Attacked \(player.name) for \(enemy.attack) HP"
+            playerHpLbl.text = "\(player.hp) HP"
+        } else {
+            printLbl.text = "Enemy missed you"
+        }
+    }
+    
     @IBAction func chestPressed(sender: AnyObject) {
         let nbSeconds: Double = 3.0
         
@@ -80,25 +114,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func attackPressed(sender: AnyObject) {
-        
-        // If the attack succeed we show the amount of attack and decrease enemy HP
-        if enemy.attemptAttack(player.attack) {
-            printLbl.text = "Attacked \(enemy.type) for \(player.attack) HP"
-            enemyHpLbl.text = "\(enemy.hp) HP"
-        } else {
-            printLbl.text = "You missed the Enemy"
-        }
-
-        /* So, the enemy is dead */
-        
+        playerAttack()
         // We delete the HP Label of the enemy
         // We set the main Label to congratulate the Player
         // We hide the Enemy (is dead) and we hide the attack button (no one to attack now)
+        // Otherwize enemy attack
         if !enemy.isAlive {
             enemyHpLbl.text = ""
             printLbl.text = "Killed enemy \(enemy.type)"
             enemyImg.hidden = true
             attackBtn.hidden = true
+        } else {
+            // Enemy attack
+            NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "enemyAttack", userInfo: nil, repeats: false)
+        }
+        
+        if !player.isAlive {
+            gameOver()
         }
         
         // If enemy drop a loot
@@ -115,6 +147,16 @@ class ViewController: UIViewController {
 
     }
     
+    func gameOver() {
+        printLbl.text = "GAME OVER"
+        
+        playerImg.hidden = true
+        attackBtn.hidden = true
+        chestBtn.hidden = true
+        
+        playerHpLbl.hidden = true
+        enemyHpLbl.hidden = true
+    }
 
 }
 

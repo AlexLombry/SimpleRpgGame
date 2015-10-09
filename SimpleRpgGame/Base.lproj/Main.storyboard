@@ -171,6 +171,7 @@
                         <outlet property="enemyHpLbl" destination="y42-uw-asP" id="MXW-pf-akh"/>
                         <outlet property="enemyImg" destination="SQ0-ng-8iO" id="i2U-h4-6On"/>
                         <outlet property="playerHpLbl" destination="B9O-rW-BJi" id="j0O-4p-DFZ"/>
+                        <outlet property="playerImg" destination="axU-67-vIC" id="jZY-qC-Zol"/>
                         <outlet property="printLbl" destination="618-3k-zIt" id="4F7-xH-82F"/>
                     </connections>
                 </viewController>
