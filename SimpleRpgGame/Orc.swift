@@ -18,7 +18,7 @@ class Orc: Enemy {
         return "Orc Warrior"
     }
     
-    override func attemptAttack(attack: Int) -> Bool {
+    override func attemptAttack(_ attack: Int) -> Bool {
         return attack >= defense ? super.attemptAttack(attack) : false
     }
 }

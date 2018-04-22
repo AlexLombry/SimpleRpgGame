@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        randomAttackPower = generateRandomAttackPower(min: 10, max: 30)
+        randomAttackPower = generateRandomAttackPower(10, max: 30)
         
         // set the player object, generate the enemy and set player lbl hp
         player = Player.init(name: "Sammy", hp: 200, attack: randomAttackPower, defense: 10)
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func generateRandomAttackPower(min min: Int, max: Int) -> Int {
+    func generateRandomAttackPower(_ min: Int, max: Int) -> Int {
         if max < min {
             return min
         } else {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     
     func generateEnemy() {
         // Show the attack button
-        attackBtn.hidden = false
+        attackBtn.isHidden = false
         
         // make a random number between 0 and 1 to know 
         // which enemy we're going to make and add it custom image (Poring is default image)
@@ -61,24 +61,24 @@ class ViewController: UIViewController {
         var pngForEnemy: String = "poring"
         
         if rand == 0 {
-            randomAttackPower = generateRandomAttackPower(min: 4, max: 18)
+            randomAttackPower = generateRandomAttackPower(4, max: 18)
             enemy = Poring(hp: 130, attack: randomAttackPower, defense: 6)
         } else {
-            randomAttackPower = generateRandomAttackPower(min: 14, max: 26)
+            randomAttackPower = generateRandomAttackPower(14, max: 26)
             enemy = Orc(hp: 167, attack: randomAttackPower, defense: 16)
             pngForEnemy = "orc"
         }
         
         // Just before launching enemy, 
         // make some property for image and label
-        beforeEnemyLaunch(pngForEnemy)
+        beforeEnemyLaunch(pngForEnemy: pngForEnemy)
 
     }
     
     ///Set HP Label, image and text for enemy
     func beforeEnemyLaunch(pngForEnemy: String) {
         enemyImg.image = UIImage(named: pngForEnemy)
-        enemyImg.hidden = false
+        enemyImg.isHidden = false
         enemyHpLbl.text = "\(enemy.hp) HP"
         printLbl.text = "Fighting \(enemy.type)"
     }
@@ -106,11 +106,11 @@ class ViewController: UIViewController {
     @IBAction func chestPressed(sender: AnyObject) {
         let nbSeconds: Double = 3.0
         
-        chestBtn.hidden = true
+        chestBtn.isHidden = true
         printLbl.text = chestMessage
 
         /// Wait 3 seconds before re generate a new enemy
-        NSTimer.scheduledTimerWithTimeInterval(nbSeconds, target: self, selector: "generateEnemy", userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: nbSeconds, target: self, selector: #selector(ViewController.generateEnemy), userInfo: nil, repeats: false)
     }
     
     @IBAction func attackPressed(sender: AnyObject) {
@@ -122,11 +122,11 @@ class ViewController: UIViewController {
         if !enemy.isAlive {
             enemyHpLbl.text = ""
             printLbl.text = "Killed enemy \(enemy.type)"
-            enemyImg.hidden = true
-            attackBtn.hidden = true
+            enemyImg.isHidden = true
+            attackBtn.isHidden = true
         } else {
             // Enemy attack
-            NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "enemyAttack", userInfo: nil, repeats: false)
+            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(ViewController.enemyAttack), userInfo: nil, repeats: false)
         }
         
         if !player.isAlive {
@@ -142,21 +142,18 @@ class ViewController: UIViewController {
             }
             
             player.addItemToStorage(loot)
-            chestBtn.hidden = false
+            chestBtn.isHidden = false
         }
 
     }
     
     func gameOver() {
         printLbl.text = "GAME OVER"
-        
-        playerImg.hidden = true
-        attackBtn.hidden = true
-        chestBtn.hidden = true
-        
-        playerHpLbl.hidden = true
-        enemyHpLbl.hidden = true
+        playerImg.isHidden = true
+        attackBtn.isHidden = true
+        chestBtn.isHidden = true
+        playerHpLbl.isHidden = true
+        enemyHpLbl.isHidden = true
     }
 
 }
-

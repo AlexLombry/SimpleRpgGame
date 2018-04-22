@@ -26,7 +26,7 @@ class Player: Character {
         return _storage
     }
 
-    func addItemToStorage(item: String) {
+    func addItemToStorage(_ item: String) {
         _storage.append(item)
     }
     

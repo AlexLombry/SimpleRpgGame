@@ -3,20 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA9C6F691BC55C2400E4A43F /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6F681BC55C2400E4A43F /* Orc.swift */; settings = {ASSET_TAGS = (); }; };
-		FA9C6F6B1BC55D1C00E4A43F /* Poring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6F6A1BC55D1C00E4A43F /* Poring.swift */; settings = {ASSET_TAGS = (); }; };
+		FA9C6F691BC55C2400E4A43F /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6F681BC55C2400E4A43F /* Orc.swift */; };
+		FA9C6F6B1BC55D1C00E4A43F /* Poring.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9C6F6A1BC55D1C00E4A43F /* Poring.swift */; };
 		FAD78BD31BC553E2007AC59F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BD21BC553E2007AC59F /* AppDelegate.swift */; };
 		FAD78BD51BC553E2007AC59F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BD41BC553E2007AC59F /* ViewController.swift */; };
 		FAD78BD81BC553E2007AC59F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD78BD61BC553E2007AC59F /* Main.storyboard */; };
 		FAD78BDA1BC553E2007AC59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD78BD91BC553E2007AC59F /* Assets.xcassets */; };
 		FAD78BDD1BC553E2007AC59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD78BDB1BC553E2007AC59F /* LaunchScreen.storyboard */; };
-		FAD78BE51BC55403007AC59F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BE41BC55403007AC59F /* Character.swift */; settings = {ASSET_TAGS = (); }; };
-		FAD78BE71BC55411007AC59F /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BE61BC55411007AC59F /* Enemy.swift */; settings = {ASSET_TAGS = (); }; };
-		FAD78BE91BC55420007AC59F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BE81BC55420007AC59F /* Player.swift */; settings = {ASSET_TAGS = (); }; };
+		FAD78BE51BC55403007AC59F /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BE41BC55403007AC59F /* Character.swift */; };
+		FAD78BE71BC55411007AC59F /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BE61BC55411007AC59F /* Enemy.swift */; };
+		FAD78BE91BC55420007AC59F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD78BE81BC55420007AC59F /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +113,7 @@
 		FAD78BC71BC553E2007AC59F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Alex Lombry";
 				TargetAttributes = {
 					FAD78BCE1BC553E2007AC59F = {
@@ -122,7 +122,7 @@
 				};
 			};
 			buildConfigurationList = FAD78BCA1BC553E2007AC59F /* Build configuration list for PBXProject "SimpleRpgGame" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -197,13 +197,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -225,11 +235,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -241,13 +253,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -263,9 +285,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -275,7 +299,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleRpgGame/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.monsterdev.fr.SimpleRpgGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -287,7 +314,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleRpgGame/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.monsterdev.fr.SimpleRpgGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

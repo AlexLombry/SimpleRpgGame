@@ -54,7 +54,7 @@ class Character {
 
     // Attacking the character
     // set _hp variable - attack power
-    func attemptAttack(attack: Int) -> Bool {
+    func attemptAttack(_ attack: Int) -> Bool {
         self._hp -= attack
         
         return true
